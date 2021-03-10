@@ -13,9 +13,9 @@ Mission Model (Post Model) *join table joining categories & users*
 
 User Model
     - has_many :missions
-    - has_many :comments
-    - has_many :commented_missions, through :comments
-    - has_many :categories, through :post
+    - has_many :feedbacks
+    - has_many :feedbacked_missions, through :feedbacks
+    - has_many :categories, through :mission
     - username
     - email
     - password_digest
@@ -27,7 +27,7 @@ User Model
 
 Mission Feedback (Comment Model) (Join Model) *join table joining users & posts*
     - belongs_to :user
-    - belongs_to :post
+    - belongs_to :mission
     - notes (content)
 
 Completed Mission Model

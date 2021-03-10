@@ -1,0 +1,39 @@
+Agent Agenda: Mission Possible
+
+
+MODELS
+
+Mission Model (Post Model) *join table joining categories & users*
+    - belongs_to :user
+    - has_many :comments
+    - has_many :users, through :comments
+    - belongs_to :category
+    - operation (title)
+    - objective (content)
+
+User Model
+    - has_many :missions
+    - has_many :comments
+    - has_many :commented_missions, through :comments
+    - has_many :categories, through :post
+    - username
+    - email
+    - password_digest
+
+(Category Model)
+    - urgency level
+    - name
+    - has_many :posts
+
+Mission Feedback (Comment Model) (Join Model) *join table joining users & posts*
+    - belongs_to :user
+    - belongs_to :post
+    - notes (content)
+
+Completed Mission Model
+
+
+CONTROLLERS
+
+
+VIEWS

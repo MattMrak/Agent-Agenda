@@ -23,7 +23,7 @@ User Model
 (Category Model)
     - urgency level
     - name
-    - has_many :posts
+    - has_many :missions
 
 Mission Feedback (Comment Model) (Join Model) *join table joining users & posts*
     - belongs_to :user

@@ -2,8 +2,8 @@ class CreateFeedbacks < ActiveRecord::Migration[6.1]
   def change
     create_table :feedbacks do |t|
       t.string :notes
-      t.resources :user
-      t.resources :mission
+      t.references :user, foreign_key: true
+      t.references :mission, foreign_key: true
 
       t.timestamps
     end

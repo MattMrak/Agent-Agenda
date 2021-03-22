@@ -14,6 +14,10 @@ class MissionsController < ApplicationController
         end
     end
 
+    def index
+        @missions = Mission.all
+    end
+
     private
     def mission_params
         params.require(:mission).permit(:operation,:objective)

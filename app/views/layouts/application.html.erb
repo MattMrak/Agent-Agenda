@@ -6,7 +6,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   </head>
-  <body>
+   <body>
+  <br>
+    <div>
+      <% if logged_in? %>
+      <%= link_to "All Missions", missions_path %> |
+      <%= link_to "New Mission", new_mission_path %> |
+      <%= link_to "Add Mission Feedback", new_feedback_path %> |
+      <%= button_to "Logout", logout_path, method:"delete" %>
+      <% else %>
+      <%= link_to "Sign Up", signup_path %> |
+      <%= link_to "Log In", login_path %> |
+      <% end %>
+    </div>
+
+    <div>
+      <% if flash[:message] %>
+        <%= flash[:message] %>
+      <% end %>
+      <%= @error %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

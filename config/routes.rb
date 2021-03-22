@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 #login & logout routes
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  
   delete '/logout' => 'sessions#destroy'
 
   # resources :categories

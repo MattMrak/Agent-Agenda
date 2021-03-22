@@ -1,0 +1,7 @@
+<h1>All Feedback</h1>
+
+<ul>
+<% @feedbacks.each do |f| %>
+  <li><%= f.user.username %> says "<%= f.notes %>" about this operation: <strong><%= link_to f.mission.operation, mission_path(f.mission_id) %></strong></li>
+<% end %>
+</ul>

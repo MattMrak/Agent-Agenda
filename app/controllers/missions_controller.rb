@@ -18,6 +18,11 @@ class MissionsController < ApplicationController
         @missions = Mission.all
     end
 
+    def show
+        @mission = Mission.find_by_id(params[:id])
+        redirect_to missions_path if !@mission
+    end
+
     private
     def mission_params
         params.require(:mission).permit(:operation,:objective)

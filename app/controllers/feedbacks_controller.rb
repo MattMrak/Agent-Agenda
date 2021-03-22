@@ -18,6 +18,10 @@ class FeedbacksController < ApplicationController
         end
     end
 
+    def show
+        @feedback = Feedback.find_by(id: params[:id])
+    end
+
     private
     def feedback_params
         params.require(:feedback).permit(:notes,:mission_id)

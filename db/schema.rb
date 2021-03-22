@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_03_10_200502) do
   create_table "missions", force: :cascade do |t|
     t.string "operation"
     t.text "objective"
+    t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

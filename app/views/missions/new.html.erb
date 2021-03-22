@@ -1,0 +1,13 @@
+<h1>New Mission</h1>
+
+<%= form_for(@mission) do |f| %>
+    
+    <%= f.label :operation %>
+    <%= f.text_field :operation %>
+    
+    <%= f.label :objective %>
+    <%= f.text_field :objective %>
+    
+    <%= f.submit %>
+    
+<% end %>

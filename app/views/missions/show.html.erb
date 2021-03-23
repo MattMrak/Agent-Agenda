@@ -1,7 +1,10 @@
 <h1>Operation: <%= @mission.operation %></h1>
+
 <h2>By: <%= @mission.user.username %> </h2>
 
 <h3>Objective: <%= @mission.objective %></h3>
+
+<h3>Urgency Level: <%= @mission.category.try(:urgency_level) %></h3>
 
 <h4>Mission Feedback:</h4>
 <% @mission.feedbacks.each do |f|%>

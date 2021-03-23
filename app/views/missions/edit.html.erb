@@ -1,0 +1,20 @@
+<h1>Edit <%= @mission.objective%>!</h1>
+
+<%= form_for(@mission) do |f|%>
+  <%= f.label "Choose Urgency Level" %>
+  <%= f.collection_select :category_id, Category.all, :id, :urgency_level, include_blank: true %>
+
+    <p>New Urgency Level
+        <%= f.fields_for :category do |c|%>
+        <%= c.text_field :urgency_level %>
+        <% end %>
+    </p><br>
+
+  <%= f.label :operation %>
+  <%= f.text_field :operation %>
+  <br><br>
+  <%= f.label :objective %>
+  <%= f.text_area :objective %>
+  
+  <%= f.submit %>
+<% end %>

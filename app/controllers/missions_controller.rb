@@ -3,6 +3,7 @@ class MissionsController < ApplicationController
 
     def new
         @mission = Mission.new
+        @mission.build_category
     end
 
     def create
@@ -29,7 +30,7 @@ class MissionsController < ApplicationController
 
     private
     def mission_params
-        params.require(:mission).permit(:operation,:objective)
+        params.require(:mission).permit(:operation,:objective, :category_id, category_attributes: [:name])
     end
 
 end

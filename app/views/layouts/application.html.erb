@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- <style>
+      * {
+        text-align: center;
+        font-family: Georgia, serif;
+        color: #000000;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000000;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #8B0000;
+      }
+      .active {
+        background-color: #4CAF50;
+      }
+    </style> -->
     <title>Agent Agenda: Mission Possible</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,15 +39,17 @@
    <body>
   <br>
     <div>
-      <% if logged_in? %>
-      <%= link_to "All Missions", missions_path %> |
-      <%= link_to "New Mission", new_mission_path %> |
-      <%= link_to "Add Mission Feedback", new_feedback_path %> |
-      <%= button_to "Logout", logout_path, method:"delete" %>
-      <% else %>
-      <%= link_to "Sign Up", signup_path %> |
-      <%= link_to "Log In", login_path %> |
-      <% end %>
+      <ul>
+        <% if logged_in? %>
+        <li><%= link_to "All Missions", missions_path %></li>
+        <li><%= link_to "New Mission", new_mission_path %></li>
+        <li><%= link_to "Add Mission Feedback", new_feedback_path %></li>
+        <br><li><%= button_to "Logout", logout_path, method:"delete" %></li>
+        <% else %>
+        <li><%= link_to "Sign Up", signup_path %></li>
+        <li><%= link_to "Log In", login_path %></li>
+        <% end %>
+      </ul>
     </div>
 
     <div>
@@ -28,5 +60,11 @@
     </div>
 
     <%= yield %>
+    <div class="wrapper">
+      <footer class="branding">
+        <small>&copy; 2021 <strong>Agent Agenda</strong></small>
+      </footer>
+    </div>
+
   </body>
 </html>

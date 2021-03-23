@@ -1,9 +1,9 @@
-<h1><%= @mission.operation %></h1>
+<h1>Operation: <%= @mission.operation %></h1>
 <h2>By: <%= @mission.user.username %> </h2>
 
-<div><%= @mission.objective %></div>
+<h3>Objective: <%= @mission.objective %></h3>
 
-<h4>Feedback:</h4>
+<h4>Mission Feedback:</h4>
 <% @mission.feedbacks.each do |f|%>
   <li><strong><%= f.user.username %></strong> says "<%= link_to f.notes, feedback_path(f) %>" </li>
 <% end %>

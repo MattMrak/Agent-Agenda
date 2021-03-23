@@ -2,7 +2,12 @@ class FeedbacksController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @feedbacks = Feedback.all
+        #check if its nested
+        if params[:mission_id] && @mission = Mission.find_by_id(params[:mission_id]) #then its nested
+            @feedbacks = @mission.feedbacks
+        else
+            @feedbacks = Feedback.all
+        end
     end
 
     def new

@@ -23,6 +23,12 @@ class MissionsController < ApplicationController
         end
     end
 
+    def edit
+        @mission = Mission.find_by_id(params[:id])
+        redirect_to missions_path if !@mission
+        @mission.build_category if !@mission.category
+    end
+
     def show
         @mission = Mission.find_by_id(params[:id])
         redirect_to missions_path if !@mission

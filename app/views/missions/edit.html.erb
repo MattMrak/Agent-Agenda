@@ -1,4 +1,4 @@
-<h1>Edit <%= @mission.objective%>!</h1>
+<h1>Edit <%= @mission.operation %>!</h1>
 
 <%= form_for(@mission) do |f|%>
   <%= f.label "Choose Urgency Level" %>
@@ -15,6 +15,6 @@
   <br><br>
   <%= f.label :objective %>
   <%= f.text_area :objective %>
-  
+  <br><br>
   <%= f.submit %>
 <% end %>

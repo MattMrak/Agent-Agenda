@@ -1,7 +1,13 @@
 <h1>New Mission</h1>
 
 <%= form_for(@mission) do |f| %>
-    
+
+    <p>Urgency Level
+    <%= f.fields_for :category do |c|%>
+    <%= c.text_field :urgency_level%>
+    <% end %>
+    </p>
+
     <%= f.label :operation %>
     <%= f.text_field :operation %>
     

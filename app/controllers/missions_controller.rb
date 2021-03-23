@@ -30,7 +30,7 @@ class MissionsController < ApplicationController
 
     private
     def mission_params
-        params.require(:mission).permit(:operation,:objective, :category_id, category_attributes: [:name])
+        params.require(:mission).permit(:operation,:objective, :category_id, category_attributes: [:urgency_level])
     end
 
 end

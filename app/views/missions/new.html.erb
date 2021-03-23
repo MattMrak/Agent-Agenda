@@ -2,10 +2,13 @@
 
 <%= form_for(@mission) do |f| %>
 
-    <p>Urgency Level
-    <%= f.fields_for :category do |c|%>
-    <%= c.text_field :urgency_level%>
-    <% end %>
+    <%= f.label "Choose Urgency Level" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :urgency_level, include_blank: true) %>
+    
+    <p>New Urgency Level
+        <%= f.fields_for :category do |c|%>
+            <%= c.text_field :urgency_level %>
+        <% end %>
     </p>
 
     <%= f.label :operation %>

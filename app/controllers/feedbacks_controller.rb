@@ -11,7 +11,11 @@ class FeedbacksController < ApplicationController
     end
 
     def new
-        @feedback = Feedback.new
+        if params[:mission_id] && @mission = Mission.find_by_id(params[:mission_id]) #then its nested
+            @feedback = @mission.feedbacks.build
+        else
+            @feedback = Feedback.new
+        end
     end
 
     def create

@@ -8,3 +8,4 @@
   <li><strong><%= f.user.username %></strong> says "<%= link_to f.notes, feedback_path(f) %>" </li>
 <% end %>
 <p><%= link_to 'All Mission Feedback', mission_feedbacks_path(@mission) %></p>
+<p><%= link_to 'Add Mission Feedback', new_mission_feedback_path(@mission) %></p>

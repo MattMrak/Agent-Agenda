@@ -1,8 +1,16 @@
+<% if @feedback.mission %>
+<h1>New Feedback for Operation: <%= @feedback.mission.operation %> </h1>
+<% else %>
 <h1>New Feedback</h1>
+<% end %>
 
-<%= form_for(@feedback) do |f|%>
+<%= form_for([@feedback.mission,@feedback]) do |f|%>
+  <% if !@feedback.mission %>
   <%= f.label :mission %>
   <%= f.collection_select :mission_id, Mission.all, :id, :operation %>
+  <% else %>
+    <%= f.hidden_field :mission_id %>
+  <% end %>
   <%= f.label :notes %>
   <%= f.text_field :notes %>
   <%= f.submit %>

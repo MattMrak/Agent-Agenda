@@ -37,3 +37,8 @@ CONTROLLERS
 
 
 VIEWS
+
+Scope Methods
+    - Class level methods that limit your return.
+    - Methods pertaining to the model.
+    - Good to use for search feature/sorting.

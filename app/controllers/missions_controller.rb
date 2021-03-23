@@ -17,9 +17,9 @@ class MissionsController < ApplicationController
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @missions = @user.missions
+            @missions = @user.missions.alpha
         else
-            @missions = Mission.all
+            @missions = Mission.alpha
         end
     end
 

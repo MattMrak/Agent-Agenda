@@ -5,6 +5,6 @@ class Mission < ApplicationRecord
   has_many :users, through: :feedbacks
 
   def category_attributes=(attr)
-    self.category = Category.find_or_create_by(attr) if !attr[:name].blank?
+    self.category = Category.find_or_create_by(attr) if !attr[:urgency_level].blank?
   end
 end

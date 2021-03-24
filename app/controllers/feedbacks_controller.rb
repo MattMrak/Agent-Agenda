@@ -29,6 +29,7 @@ class FeedbacksController < ApplicationController
 
     def show
         @feedback = Feedback.find_by(id: params[:id])
+        redirect_to feedbacks_path
     end
 
     def edit

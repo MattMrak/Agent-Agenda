@@ -4,6 +4,7 @@ class Mission < ApplicationRecord
   has_many :feedbacks
   has_many :users, through: :feedbacks
   validates :operation, :objective, presence: true
+  validates :operation, uniqueness: {scope: :user_id, message: "already exists"}
 
   scope :alpha, -> { order(:operation) }
   scope :most_feedbacks, -> { left_joins(:feedbacks).group('missions.id').order('count(feedbacks.mission_id) desc') }

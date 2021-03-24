@@ -1,5 +1,7 @@
 <h1>Edit <%= @mission.operation %>!</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @mission} %>
+
 <%= form_for(@mission) do |f|%>
   <%= f.label "Choose Urgency Level" %>
   <%= f.collection_select :category_id, Category.all, :id, :urgency_level, include_blank: true %>

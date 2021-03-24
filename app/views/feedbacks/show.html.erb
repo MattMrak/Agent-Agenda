@@ -1,3 +1,8 @@
+<h1>Feedback For Operation: <%= @feedback.mission.operation %></h1>
 <h2><%= @feedback.notes %> - <%= @feedback.user.username %></h2>
 
-<h4>Read the mission here: <%= link_to @feedback.mission.operation, mission_path(@feedback.mission_id) %></h4>
+<% if @feedback.user == current_user %>
+  <%= link_to "Edit Feedback", edit_feedback_path(@feedback) %>
+<% end %>
+
+<h4>View The Mission Here: <%= link_to @feedback.mission.operation, mission_path(@feedback.mission_id) %></h4>

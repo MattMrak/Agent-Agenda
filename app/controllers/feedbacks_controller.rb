@@ -33,6 +33,7 @@ class FeedbacksController < ApplicationController
 
     def edit
         @feedback = Feedback.find_by(id: params[:id])
+        redirect_to comments_path if !@comment || @comment.user != current_user
     end
 
     def update

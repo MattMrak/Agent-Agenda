@@ -1,5 +1,7 @@
 <h1>Edit Feedback</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @feedback} %>
+
 <%= form_for(@feedback) do |f|%>
   <%= f.label :mission %>
   <%= f.collection_select :mission_id, Mission.all, :id, :operation %>

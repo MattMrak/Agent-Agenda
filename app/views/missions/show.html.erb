@@ -6,10 +6,15 @@
 
 <h3>Urgency Level: <%= @mission.category.try(:urgency_level) %></h3>
 
-<h4>Mission Feedback:</h4>
-<% @mission.feedbacks.each do |f|%>
-  <li><strong><%= f.user.username %></strong> says "<%= link_to f.notes, feedback_path(f) %>" </li>
+
+<h4>Most Recent Feedback:</h4>
+<% @mission.feedbacks.order(updated_at: :desc).limit(3).each do |f|%>
+  <li><strong><%= f.user.username%></strong> says "<%= link_to f.notes, mission_feedback_path(@mission,f)%>" at <%= f.updated_at.strftime("%I:%M %p on %m/%d/%Y") %></li>
 <% end %>
+<% if !@mission.feedbacks.empty? %>
 <p><%= link_to 'All Mission Feedback', mission_feedbacks_path(@mission) %></p>
+<% end %>
 <p><%= link_to 'Add Mission Feedback', new_mission_feedback_path(@mission) %></p>
+<% if @mission.user == current_user %>
 <p><%= link_to "Edit Mission", edit_mission_path(@mission) %></p>
+<% end %>

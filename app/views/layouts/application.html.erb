@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <style>
+    <style>
       * {
         text-align: center;
         font-family: Georgia, serif;
         color: #000000;
       }
-      ul {
+      nav {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
         background-color: #000000;
       }
-      li {
+      dt {
         float: left;
       }
-      li a {
+      dt a {
         display: block;
         color: white;
         text-align: center;
-        padding: 14px 16px;
+        padding: 7px 8px;
         text-decoration: none;
       }
-      li a:hover {
+      dt a:hover {
         background-color: #8B0000;
       }
-      .active {
-        background-color: #4CAF50;
+      ul {
+	      list-style: none;
       }
-    </style> -->
+    </style>
     <title>Agent Agenda: Mission Possible</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -39,21 +39,23 @@
    <body>
   <br>
     <div>
+    <nav>
       <ul>
         <% if logged_in? %>
-        <li><%= link_to "New Mission", new_mission_path %></li>
-        <li><%= link_to "Add Mission Feedback", new_feedback_path %></li>
-        <li><%= link_to "All Missions", missions_path %></li>
-        <li><%= link_to "My Missions", user_missions_path(current_user) %></li>
-        <li><%= link_to "Most Active Users", users_most_active_path %></li>
-        <li><%= link_to "Home", user_path(current_user)%></li>
-        <br><li><%= button_to "Logout", logout_path, method:"delete" %></li>
+        <dt><%= link_to "New Mission", new_mission_path %></dt>
+        <dt><%= link_to "Add Mission Feedback", new_feedback_path %></dt>
+        <dt><%= link_to "All Missions", missions_path %></dt>
+        <dt><%= link_to "My Missions", user_missions_path(current_user) %></dt>
+        <dt><%= link_to "Most Active Users", users_most_active_path %></dt>
+        <dt><%= link_to "Home", root_path%></dt>
+        <dt style="float:right"><%= button_to "Logout", logout_path, method:"delete" %></dt>
         <% else %>
-        <li><%= link_to "Sign Up", signup_path %></li>
-        <li><%= link_to "Log In", login_path %></li>
-        <li><%= link_to "Log In With Google", '/auth/google_oauth2' %></li>
+        <dt><%= link_to "Sign Up", signup_path %></dt>
+        <dt><%= link_to "Log In", login_path %></dt>
+        <dt><%= link_to "Log In With Google", '/auth/google_oauth2' %></dt>
         <% end %>
       </ul>
+      </nav>
     </div>
 
     <div>

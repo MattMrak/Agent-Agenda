@@ -1,7 +1,16 @@
-<h1>All Missions</h1>
-
-<ul>
-<% @missions.each do |m| %>
-    <li><%= link_to m.operation, mission_path(m) %></li>
+<% if @user %>
+  <h1><%= @user.username %>'s Missions:</h1>
+<% else %>
+  <h1>All Missions</h1>
 <% end %>
-</ul>
+<% if @missions.empty? %>
+    <h2>No missions yet. Create a mission <%= link_to "here", new_mission_path %></h2>
+<% else %>
+
+    <ul>
+    <% @missions.each do |m| %>
+        <li><%= link_to m.operation, mission_path(m) %></li>
+    <% end %>
+    </ul>
+
+<% end %>

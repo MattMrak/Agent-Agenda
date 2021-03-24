@@ -1,4 +1,8 @@
+<% if @mission %>
+<h1>Feedback For Operation: <%= @mission.operation %></h1>
+<% else %>
 <h1>All Feedback</h1>
+<% end %>
 
 <ul>
 <% @feedbacks.each do |f| %>

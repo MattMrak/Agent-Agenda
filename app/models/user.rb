@@ -6,4 +6,9 @@ class User < ApplicationRecord
     has_many :categories, through: :missions
     validates :username, :email, :password, presence: true
     validates :username, uniqueness: true
+
+    def self.most_active
+        @top_users = joins(:missions).group(:user_id).order("count(user_id) desc").limit(3)
+    end
+
 end

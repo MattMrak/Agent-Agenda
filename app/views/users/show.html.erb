@@ -1,9 +1,9 @@
-<h1>Welcome <%= @user.username %></h1>
+<h1><%= @user.username %>'s Missions</h1>
 
 <% if @user.missions.empty? %>
     <h2>No missions yet. Create a mission <%= link_to "here", new_mission_path%></h2>
 <% else %>
-<h2>Your Missions</h2>
+
 <ul>
 <% @user.missions.each do |m|%>
     <li><%= link_to m.operation, mission_path(m) %></li>

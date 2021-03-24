@@ -23,6 +23,10 @@ class UsersController < ApplicationController
         redirect_to '/' if !@user
     end
 
+    def most_active
+        @top_users = User.most_active
+    end
+
     private
 
     def user_params

@@ -1,6 +1,6 @@
 <h1>Operation: <%= @mission.operation %></h1>
 
-<h2>By: <%= @mission.user.username %> </h2>
+<h2>By: <%=link_to @mission.user.username, user_path(@mission.user) %> </h2>
 
 <h3>Objective: <%= @mission.objective %></h3>
 

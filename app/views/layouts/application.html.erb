@@ -45,6 +45,7 @@
         <li><%= link_to "Add Mission Feedback", new_feedback_path %></li>
         <li><%= link_to "All Missions", missions_path %></li>
         <li><%= link_to "My Missions", user_missions_path(current_user) %></li>
+        <li><%= link_to "Most Active Users", users_most_active_path %></li>
         <li><%= link_to "Home", user_path(current_user)%></li>
         <br><li><%= button_to "Logout", logout_path, method:"delete" %></li>
         <% else %>

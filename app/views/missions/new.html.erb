@@ -1,5 +1,16 @@
 <h1>New Mission</h1>
 
+<% if @mission.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
+    <ul>
+      <% @mission.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@mission) do |f| %>
 
     <%= f.label "Choose Urgency Level" %>

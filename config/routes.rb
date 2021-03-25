@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   #google omniauth
-  # get '/auth/google_oauth2' => '#'
   get '/auth/:provider/callback' => 'sessions#google'
 
   # resources :categories

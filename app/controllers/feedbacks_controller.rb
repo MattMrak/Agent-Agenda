@@ -29,7 +29,10 @@ class FeedbacksController < ApplicationController
 
     def show
         @feedback = Feedback.find_by(id: params[:id])
-        redirect_to feedbacks_path
+        if !@feedback
+            flash[:message] = "Feedback not found"
+            redirect_to feedbacks_path
+        end
     end
 
     def edit
@@ -45,6 +48,12 @@ class FeedbacksController < ApplicationController
         else
           render :edit
         end
+    end
+
+    def destroy
+        @feedback = Feedback.find(params[:id])
+        @feedback.destroy
+        redirect_to feedbacks_path
     end
 
     private

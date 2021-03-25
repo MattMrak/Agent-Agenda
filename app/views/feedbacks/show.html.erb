@@ -5,4 +5,6 @@
   <%= link_to "Edit Feedback", edit_feedback_path(@feedback) %>
 <% end %>
 
+<br><br><%= button_to "Delete Feedback", feedback_path, method:"delete" %>
+
 <h4>View The Mission Here: <%= link_to @feedback.mission.operation, mission_path(@feedback.mission_id) %></h4>

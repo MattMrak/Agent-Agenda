@@ -1,24 +1,20 @@
-# README
+# Agent-Agenda
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Agent Agenda! The goal of this website application is to create a fun and interactive to-do list. Become a secret agent and make all of your missions possible! Signup to create an account, login, or login with google to get started!
 
-Things you may want to cover:
+# Installation
+Enter the following code in your terminal.
 
-* Ruby version
+    $ bundle install
+    $ rake db:migrate
 
-* System dependencies
+# Usage
+Enter the following code in your terminal, then visit http://localhost:3000/ in your internet browser.
 
-* Configuration
+    $ rails s
 
-* Database creation
+# Contributors Guide
+This project was created to be a relatively simple, fun and welcoming space for collaboration. Pull Requests and Bug Reports are supported, please do so on GitHub at https://github.com/MattMrak/Agent-Agenda.git. 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+Available under the terms of the MIT License at http://opensource.org/licenses/MIT.

@@ -17,6 +17,7 @@
 <p><%= link_to 'Add Mission Feedback', new_mission_feedback_path(@mission) %></p>
 <% if @mission.user == current_user %>
 <p><%= link_to "Edit Mission", edit_mission_path(@mission) %></p>
+<%= button_to "Delete Mission", mission_path, method:"delete" %>
 <% end %>
 
-<%= button_to "Delete Mission", mission_path, method:"delete" %>
+

@@ -18,3 +18,5 @@
 <% if @mission.user == current_user %>
 <p><%= link_to "Edit Mission", edit_mission_path(@mission) %></p>
 <% end %>
+
+<%= button_to "Delete", mission_path, method:"delete" %>

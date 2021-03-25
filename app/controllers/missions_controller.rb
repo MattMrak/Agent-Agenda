@@ -44,6 +44,12 @@ class MissionsController < ApplicationController
         redirect_to missions_path if !@mission
     end
 
+    def destroy
+        @mission = Mission.find(params[:id])
+        @mission.destroy
+        redirect_to missions_path
+    end
+
     private
     def mission_params
         params.require(:mission).permit(:operation,:objective, :category_id, category_attributes: [:urgency_level])
